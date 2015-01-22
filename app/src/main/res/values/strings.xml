@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Hello world</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="activity1">Activity1</string>
+    <string name="menu_add">NewNote</string>
+    <string name="title_activity_note_editor">New Note</string>
+    <string name="title_edit">Edit</string>
+    <string name="title_new">New</string>
+    <string name="note_title">Title</string>
+    <string name="note_content">Content</string>
+    <string name="menu_save">Save</string>
+    <string name="menu_delete">Delete</string>
+
+
+</resources>

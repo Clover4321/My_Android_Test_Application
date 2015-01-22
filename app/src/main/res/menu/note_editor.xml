@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.fudan.clover.mytestapplication.NoteEditorActivity">
+
+    <item android:id="@+id/menu_save"
+        android:icon="@drawable/ic_save_black_48dp"
+        android:alphabeticShortcut="s"
+        android:title="@string/menu_save"
+        android:showAsAction="ifRoom|withText" />
+
+    <item android:id="@+id/menu_delete"
+        android:icon="@drawable/ic_delete_black_48dp"
+        android:title="@string/menu_delete"
+        android:showAsAction="ifRoom|withText" />
+
+    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" android:showAsAction="never" />
+</menu>

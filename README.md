@@ -14,3 +14,4 @@ A test app when learning android. Expolre for fun.
  - Relative
  - Grid
 - Click event (in UI thread, need more to learn in multi-thread like AsycTask and handler）
+- Fragment

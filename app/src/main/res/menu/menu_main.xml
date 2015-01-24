@@ -7,6 +7,11 @@
         android:alphabeticShortcut="a"
         android:showAsAction="always"/>
 
+    <item android:id="@+id/jump_fragment"
+        android:icon="@drawable/ic_launcher"
+        android:title="FragmentTest"
+        android:showAsAction="always"/>
+
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" android:showAsAction="never" />
 </menu>

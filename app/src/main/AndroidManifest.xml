@@ -20,6 +20,10 @@
             android:name=".NoteEditorActivity"
             android:label="@string/title_activity_note_editor" >
         </activity>
+        <activity
+            android:name=".BasicFragmentActivity"
+            android:label="@string/title_activity_basic_fragment" >
+        </activity>
     </application>
 
 </manifest>

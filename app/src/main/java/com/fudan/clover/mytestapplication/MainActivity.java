@@ -95,6 +95,10 @@ public class MainActivity extends ListActivity {
 				intent.putExtra(EXTRA_NOTE_ID, -1);
 				startActivity(intent);
 				return true;
+			case R.id.jump_fragment:
+				Intent fragIntent = new Intent(this, BasicFragmentActivity.class);
+				startActivity(fragIntent);
+				return true;
 			default:
 				return super.onOptionsItemSelected(item);
 		}

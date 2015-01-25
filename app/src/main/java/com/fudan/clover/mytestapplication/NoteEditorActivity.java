@@ -58,6 +58,10 @@ public class NoteEditorActivity extends Activity {
 				addOrUpgradeNote();
 				finish();
 				return true;
+			case R.id.menu_delete:
+				_db.deleteNote(_noteId);
+				finish();
+				return true;
 			default:
 				return super.onOptionsItemSelected(item);
 		}

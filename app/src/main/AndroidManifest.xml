@@ -18,11 +18,13 @@
         </activity>
         <activity
             android:name=".NoteEditorActivity"
-            android:label="@string/title_activity_note_editor" >
+            android:label="@string/title_activity_note_editor"
+            android:parentActivityName=".MainActivity">
         </activity>
         <activity
             android:name=".BasicFragmentActivity"
-            android:label="@string/title_activity_basic_fragment" >
+            android:label="@string/title_activity_basic_fragment"
+            android:parentActivityName=".MainActivity">
         </activity>
     </application>
 

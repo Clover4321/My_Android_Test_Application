@@ -16,5 +16,8 @@
     <string name="title_activity_basic_fragment">BasicFragmentActivity</string>
     <string name="btn_fragment">Button in Fragment</string>
     <string name="toast_you_just_clicked_a_fragment">You just clicked a fragment!</string>
+    <string name="title_activity_camera">Camera</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="camera">Camera</string>
 
 </resources>

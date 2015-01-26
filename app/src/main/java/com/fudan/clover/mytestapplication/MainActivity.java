@@ -88,7 +88,9 @@ public class MainActivity extends ListActivity {
         int id = item.getItemId();
 
 		switch (id) {
-			case R.id.action_settings:
+			case R.id.action_camera:
+				Intent camIntent = new Intent(this, Camera.class);
+				startActivity(camIntent);
 				return true;
 			case R.id.note_add:
 				Intent intent = new Intent(this, NoteEditorActivity.class);

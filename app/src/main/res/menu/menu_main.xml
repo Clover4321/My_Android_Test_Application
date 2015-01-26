@@ -12,6 +12,6 @@
         android:title="FragmentTest"
         android:showAsAction="always"/>
 
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+    <item android:id="@+id/action_camera" android:title="@string/camera"
         android:orderInCategory="100" android:showAsAction="never" />
 </menu>

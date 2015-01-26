@@ -1,14 +1,15 @@
 package com.fudan.clover.mytestapplication;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
 
-public class NoteEditorActivity extends Activity {
+public class NoteEditorActivity extends ActionBarActivity {
 	private EditText _noteTitleEditText;
 	private EditText _noteContentEditText;
 	private int _noteId;
@@ -18,6 +19,9 @@ public class NoteEditorActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_note_editor);
+
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.show();
 
 		_noteTitleEditText = (EditText) findViewById(R.id.noteTitleEditText);
 		_noteContentEditText = (EditText) findViewById(R.id.noteContentEditText);

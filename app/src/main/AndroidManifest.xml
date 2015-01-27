@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.fudan.clover.mytestapplication" >
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -22,7 +27,7 @@
         <activity
             android:name=".NoteEditorActivity"
             android:label="@string/title_activity_note_editor"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".ListActivity" >
         </activity>
         <activity
             android:name=".BasicFragmentActivity"
@@ -32,6 +37,21 @@
         <activity
             android:name=".Camera"
             android:label="@string/title_activity_camera"
+            android:parentActivityName=".MainActivity" >
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustResize|stateVisible"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+            android:name=".NavigationActivity"
+            android:label="@string/title_activity_navigation" >
+        </activity>
+        <activity
+            android:name=".ListActivity"
+            android:label="@string/title_activity_list"
             android:parentActivityName=".MainActivity">
         </activity>
     </application>

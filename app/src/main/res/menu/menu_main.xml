@@ -14,6 +14,21 @@
         android:title="FragmentTest"
         app:showAsAction="always"/>
 
+    <item
+        android:id="@+id/jump_login"
+        android:title="LoginTest"
+        app:showAsAction="collapseActionView"/>
+
+    <item
+        android:id="@+id/jump_navigation"
+        android:title="NavigationTest"
+        app:showAsAction="collapseActionView"/>
+
+    <item
+        android:id="@+id/jump_list"
+        android:title="DBList"
+        app:showAsAction="collapseActionView"/>
+
     <item android:id="@+id/action_camera" android:title="@string/camera"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>

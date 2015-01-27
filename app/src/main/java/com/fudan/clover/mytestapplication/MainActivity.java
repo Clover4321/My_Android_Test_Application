@@ -1,10 +1,10 @@
 package com.fudan.clover.mytestapplication;
 
 import android.app.ActionBar;
-import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -16,35 +16,16 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends ActionBarActivity {
 
 	public final static String EXTRA_NOTE_ID = "com.example.android.notepad.NOTEID";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
-		getListView().setOnCreateContextMenuListener(this);
-
-		NoteDbHelper db = new NoteDbHelper(this);
-
-		String[] dataColumns = new String[]{"title", "content"};
-		int[] viewIds = new int[]{R.id.item_title, R.id.item_summary};
-
-		Cursor cursor = db.getAllNotesCursor();
-
-		try {
-			SimpleCursorAdapter adapter = new SimpleCursorAdapter(
-					this,
-					R.layout.notelist_item,
-					cursor,
-					dataColumns,
-					viewIds
-			);
-			setListAdapter(adapter);
-		} catch (Exception e) {
-			Log.d("Error:", "1", e);
-		}
+        setContentView(R.layout.activity_main);
+		android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+		actionBar.show();
 	}
 
 	/*
@@ -95,56 +76,20 @@ public class MainActivity extends ListActivity {
 				Intent fragIntent = new Intent(this, BasicFragmentActivity.class);
 				startActivity(fragIntent);
 				return true;
+			case R.id.jump_login:
+				Intent loginIntent = new Intent(this, LoginActivity.class);
+				startActivity(loginIntent);
+				return true;
+			case R.id.jump_navigation:
+				Intent naviIntent = new Intent(this, NavigationActivity.class);
+				startActivity(naviIntent);
+				return true;
+			case R.id.jump_list:
+				Intent listIntent = new Intent(this, com.fudan.clover.mytestapplication.ListActivity.class);
+				startActivity(listIntent);
+				return true;
 			default:
 				return super.onOptionsItemSelected(item);
 		}
     }
-
-	@Override
-	public boolean onContextItemSelected(MenuItem item) {
-		AdapterView.AdapterContextMenuInfo info;
-
-		try {
-			info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-		} catch (ClassCastException e) {
-			Log.e("SimpleNotePad", "bad menuInfo", e);
-			return false;
-		}
-
-		NoteDbHelper db = new NoteDbHelper(this);
-
-		switch (item.getItemId()) {
-			case R.id.context_delete:
-				int noteId = (int) info.id;
-				if (noteId > 0) {
-					db.deleteNote(noteId);
-				}
-				reloadNote();
-				return true;
-			default:
-				return super.onContextItemSelected(item);
-		}
-	}
-
-	private void reloadNote() {
-		SimpleCursorAdapter adapter = (SimpleCursorAdapter) getListAdapter();
-		if (adapter != null) {
-			NoteDbHelper db = new NoteDbHelper(this);
-			Cursor cursor = db.getAllNotesCursor();
-			adapter.swapCursor(cursor);
-		}
-	}
-
-	@Override
-	public void onResume() {
-		super.onResume();
-		reloadNote();
-	}
-
-	@Override
-	protected void onListItemClick(ListView l, View v, int position, long id) {
-		Intent intent = new Intent(this, NoteEditorActivity.class);
-		intent.putExtra(EXTRA_NOTE_ID, (int) id);
-		startActivity(intent);
-	}
 }

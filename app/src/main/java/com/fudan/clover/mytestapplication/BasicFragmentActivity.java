@@ -3,7 +3,9 @@ package com.fudan.clover.mytestapplication;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,7 +18,7 @@ public class BasicFragmentActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_basic_fragment);
 
-		android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+		ActionBar actionBar = getSupportActionBar();
 		actionBar.show();
 
 		FragmentManager fm = getFragmentManager();
@@ -29,6 +31,9 @@ public class BasicFragmentActivity extends ActionBarActivity {
 		}
 	}
 
+	protected void onPostCreate(Bundle savedInstanceState) {
+		super.onPostCreate(savedInstanceState);
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -48,7 +53,6 @@ public class BasicFragmentActivity extends ActionBarActivity {
 		if (id == R.id.action_settings) {
 			return true;
 		}
-
 		return super.onOptionsItemSelected(item);
 	}
 }
